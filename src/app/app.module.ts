@@ -53,8 +53,8 @@ const apiUrl = environment.apiUrl;
       config: {
         tokenGetter: function  tokenGetter() {
              return     localStorage.getItem('token');},
-        whitelistedDomains: [`${apiUrl}`],
-        blacklistedRoutes: [`${apiUrl}/auth/login`]
+        whitelistedDomains: ['localhost:3000'],
+        blacklistedRoutes: ['http://localhost:3000/auth/login']
       }
     })
   ],
