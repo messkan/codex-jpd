@@ -1,0 +1,72 @@
+
+  <div class="card ">
+    <div class="card-header">
+      <h3 class="card-title">Ajouter un nouveau membre
+      </h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form role="form" id="quickForm" [formGroup]="userForm">
+      <div class="card-body">
+        <div class="form-group">
+          <label for="exampleInputEmail1">username<span class="text-danger"> *</span></label>
+          <input type="text" formControlName="username" class="form-control" id="exampleInputEmail1"
+            placeholder="Entrer username">
+
+          <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+
+            <div *ngIf="username.errors.required">
+              username obligatoire
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password <span class="text-danger"> *</span></label>
+          <input type="password" formControlName="password" class="form-control" id="exampleInputPassword1"
+            placeholder="Password">
+          <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+
+            <div *ngIf="password.errors.minlength">
+              minimum 4 caractères
+            </div>
+            <div *ngIf="password.errors.required">
+              password obligatoire
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Objectif du chiffre <span class="text-danger">*</span></label>
+          <input type="number" formControlName="objectif" class="form-control" id="objectif"
+          placeholder="Objectif du chiffre">
+          <div *ngIf="objectif.invalid && (objectif.dirty || objectif.touched)" class="alert alert-danger">
+
+            <div *ngIf="objectif.errors.required">
+             objectif du chiffre obligatoire
+            </div>
+            
+          </div>
+          
+        </div>
+       
+        <div class="form-group">
+          <label>Montant signe</label>
+          <input type="number" formControlName="montant" class="form-control" id="montant"
+          placeholder="Montant signe">
+          
+        </div>
+        <div class="form-group">
+          <label>Choisir role <span class="text-danger">*</span></label>
+          <select name="role" formControlName="role" class="form-control">
+            <option value="ROLE_RESPONSABLE" selected="selected">Responsable</option>
+            <option value="ROLE_COMMERÇANT">Commerçant</option>
+          </select>
+
+        </div>
+      </div>
+      <!-- /.card-body -->
+      <div class="card-footer">
+        <button type="submit" (click)="addNewUser()" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>

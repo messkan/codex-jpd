@@ -1,0 +1,13 @@
+@import '../../../config.scss';
+
+
+.main-sidebar {
+  height: 100vh;
+  overflow: scroll;
+  background-color: $primary-color;
+
+  
+}
+#title-codex , a:hover{
+  color: $secondary-color !important;
+}
