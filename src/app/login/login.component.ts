@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   ) {
     if(this.loginService.loggedIn() ){
 
-      if(localStorage.getItem('ROLE_COMMERCANT')){
+      if(localStorage.getItem('ROLE_COMMERCIAL')){
       this.router.navigate(['/dashboard/commercant']);
       }else{
       this.router.navigate(['/dashboard/users']);
