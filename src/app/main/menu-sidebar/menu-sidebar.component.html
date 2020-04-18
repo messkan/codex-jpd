@@ -5,8 +5,7 @@
       src="assets/img/ic.png"
       alt="CODEX Logo"
       class="brand-image img-circle elevation-3"
-      style="opacity: .8;background-color: #fff;"
-      
+      style="opacity: 0.8; background-color: #fff;"
     />
     <span id="title-codex" class="brand-text font-weight">CODEX JE JPD</span>
   </a>
@@ -23,7 +22,7 @@
         />
       </div>
       <div class="info">
-        <a [routerLink]="['/profile']" class="d-block">{{username}}</a>
+        <a [routerLink]="['/profile']" class="d-block">{{ username }}</a>
       </div>
     </div>
 
@@ -36,7 +35,11 @@
         data-accordion="false"
       >
         <li class="nav-item">
-          <a *ngIf="role === 'ROLE_RESPONSABLE'" [routerLink]="['/users']" class="nav-link">
+          <a
+            *ngIf="role === 'ROLE_RESPONSABLE'"
+            [routerLink]="['/dashboard/users']"
+            class="nav-link"
+          >
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Membres
